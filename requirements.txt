@@ -3,25 +3,34 @@ anyio==4.4.0
 Brotli @ file:///croot/brotli-split_1714483155106/work
 certifi==2024.8.30
 charset-normalizer @ file:///croot/charset-normalizer_1721748349566/work
+click==8.1.7
 distro==1.9.0
+dnspython==2.6.1
+email_validator==2.2.0
+faiss-gpu-cu12==1.8.0.2
+fastapi==0.112.2
+fastapi-cli==0.0.5
 filelock @ file:///croot/filelock_1700591183607/work
 fsspec==2024.6.1
 gmpy2 @ file:///work/ci_py311/gmpy2_1676839849213/work
 h11==0.14.0
 httpcore==1.0.5
+httptools==0.6.1
 httpx==0.27.2
 huggingface-hub==0.24.6
 idna==3.8
 Jinja2 @ file:///croot/jinja2_1716993405101/work
 jiter==0.5.0
 joblib==1.4.2
+markdown-it-py==3.0.0
 MarkupSafe @ file:///croot/markupsafe_1704205993651/work
+mdurl==0.1.2
 mkl-fft @ file:///croot/mkl_fft_1695058164594/work
 mkl-random @ file:///croot/mkl_random_1695059800811/work
 mkl-service==2.4.0
 mpmath @ file:///croot/mpmath_1690848262763/work
 networkx @ file:///croot/networkx_1720002482208/work
-numpy==2.1.0
+numpy==1.26.4
 nvidia-cublas-cu12==12.1.3.1
 nvidia-cuda-cupti-cu12==12.1.105
 nvidia-cuda-nvrtc-cu12==12.1.105
@@ -39,17 +48,22 @@ packaging==24.1
 pillow @ file:///croot/pillow_1721059439630/work
 pydantic==2.8.2
 pydantic_core==2.20.1
+Pygments==2.18.0
 PyPDF2==3.0.1
 PySocks @ file:///work/ci_py311/pysocks_1676822712504/work
 python-dotenv==1.0.1
+python-multipart==0.0.9
 PyYAML @ file:///croot/pyyaml_1698096049011/work
 regex==2024.7.24
 requests @ file:///croot/requests_1721410876868/work
+rich==13.8.0
 safetensors==0.4.4
 scikit-learn==1.5.1
 scipy==1.14.1
 sentence-transformers==3.0.1
+shellingham==1.5.4
 sniffio==1.3.1
+starlette==0.38.2
 sympy @ file:///croot/sympy_1701397643339/work
 threadpoolctl==3.5.0
 tokenizers==0.19.1
@@ -59,8 +73,10 @@ torchvision==0.19.0
 tqdm==4.66.5
 transformers==4.44.2
 triton==2.2.0
+typer==0.12.5
 typing_extensions @ file:///croot/typing_extensions_1715268824938/work
 urllib3 @ file:///croot/urllib3_1718912636303/work
-# typing_extensions==4.12.2
-# urllib3==2.2.2
-PyPDF2==3.0.1
+uvicorn==0.30.6
+uvloop==0.20.0
+watchfiles==0.24.0
+websockets==13.0.1

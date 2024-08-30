@@ -96,6 +96,19 @@ class PIIDetectionAgent:
 
         return response.choices[0].message.content.strip()
 
+    def format_output(self, openai_response: str):
+        #TODO: have a better output formatter
+        tagged = False
+        if 'High Match' in openai_response or 'Potential Match' in openai_response:
+            tagged = True
+        
+        tagged_client_names = []
+        for client_name in self.client_data.keys():
+            if client_name in openai_response:
+                tagged_client_names.append(client_name)
+        
+        return {"tagged": tagged, "clients": tagged_client_names}
+
 if __name__ == "__main__":
     agent = PIIDetectionAgent()
     print(agent.detect_client_information("the client reported revenue of 50.2 billion"))
