@@ -22,7 +22,7 @@ def chunk_text(text):
 class PIIDetectionAgent:
     def __init__(self, pdf_directory: Path = "./data") -> None:
         self.pdf_directory = pdf_directory
-        self.openai_client = OpenAI(api_key=os.getenv("OPENAI_KEY"))
+        self.openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
         self.encoder = SentenceTransformer('all-MiniLM-L6-v2')
 
         self.client_data = self._extract_client_content()
