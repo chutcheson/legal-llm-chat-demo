@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import json
 from llm import run_llm  # Import the run_llm function
 import traceback
+from pii_detection_agent import PIIDetectionAgent
 
 app = FastAPI()
 
@@ -16,6 +17,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+agent = PIIDetectionAgent()
 
 class TextRequest(BaseModel):
     text: str
@@ -107,6 +111,17 @@ async def process_text(request: TextRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Unexpected error: {str(e)}")
 
+class PIIItem(BaseModel):
+    text: str
+
+@app.post("/pii-scan")
+async def pii_scan(pii_input: PIIItem):
+    text = pii_input.text
+    openai_response = agent.detect_client_information(text)
+    return agent.format_output(openai_response)
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
